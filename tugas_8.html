@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>My Daily Journal</title>
+
+	<link rel="icon" href="img/logo.png" />
+
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css"
+	/>
+
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+		crossorigin="anonymous"
+	/>
+
+	<style>
+		.gallery-img {
+			max-width: fit-content;
+			height: 300px;
+			object-fit: cover;
+			border-radius: 10px;
+		}
+
+		@media (max-width: 576px) {
+			.gallery-img {
+				height: 250px;
+			}
+		}
+
+		.carousel-control-prev,
+		.carousel-control-next {
+			filter: invert(1) grayscale(100);
+		}
+
+		#home {
+			background-color: rgb(124, 14, 68);
+			color: rgb(255, 234, 211);
+		}
+
+		#article {
+			background-color: rgb(170, 94, 122);
+			color: rgb(255, 234, 211);
+		}
+
+		#gallery {
+			background-color: rgb(212, 154, 154);
+			color: rgb(124, 14, 68);
+		}
+
+		#schedule {
+			background-color: rgb(242, 218, 206);
+			color: rgb(124, 14, 68);
+		}
+
+		#profile {
+			background-color: rgb(255, 244, 222);
+			color: rgb(212, 154, 154);
+		}
+		body.dark #home,
+		body.dark #article,
+		body.dark #gallery,
+		body.dark #schedule,
+		body.dark #profile,
+		body.dark footer {
+			background-color: #121212 !important;
+			color: #f1f1f1 !important;
+		}
+
+		body.dark .card {
+			background-color: #1e1e1e !important;
+			border-color: #333 !important;
+			color: #f1f1f1 !important;
+		}
+
+		body.dark .card-header {
+			background-color: #2a2a2a !important;
+			color: #f1f1f1 !important;
+		}
+
+		body.dark .table th,
+		body.dark .table td {
+			color: #f1f1f1 !important;
+		}
+
+		body.dark footer .text-dark {
+			color: #f1f1f1 !important;
+		}
+	</style>
+</head>
+
+<body>
+
+	<!-- nav begin -->
+	<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">My Daily Journal</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+				>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-dark">
+					<li class="nav-item">
+						<a class="nav-link" href="#home">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#article">Article</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#gallery">Gallery</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#schedule">Schedule</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#profile">Profile</a>
+					</li>
+					<li class="nav-item ms-lg-3">
+					<button id="btnDark" class="btn btn-dark btn-sm" title="Dark">
+						<i class="bi bi-moon-stars-fill"></i>
+					</button>
+					<button id="btnLight" class="btn btn-danger btn-sm" title="Light">
+						<i class="bi bi-sun-fill"></i>
+					</button>
+				</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- nav end -->
+
+	<!-- home begin -->
+	<section id="home" class="text-center p-5 text-sm-start">
+		<div class="container">
+			<div class="d-sm-flex flex-sm-row-reverse align-items-center">
+				<img src="img/hero.jpeg" class="img-fluid" width="300" />
+				<div>
+					<h1 class="fw-bold display-4">Every Day Deserves to Be Remembered</h1>
+					<h4 class="lead display-6">Simpan setiap momen kecil yang membuat harimu berarti</h4>
+					<span id="tanggal"></span>
+					<span id="jam"></span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- hero end -->
+
+	<!-- article begin -->
+	<section id="article" class="text-center p-5">
+		<div class="container">
+			<h1 class="fw-bold display-4 pb-3">article</h1>
+			<div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+				<div class="col">
+					<div class="card h-100">
+						<img src="img/p1.jpeg" class="card-img-top" style="height: 200px; object-fit: contain;" alt="1">
+						<div class="card-body">
+							<h5 class="card-title">Where the Land Ends</h5>
+							<p class="card-text">Di ujung tebing, ada cahaya kecil yang selalu menunggu pulang.</p>
+						</div>
+						<div class="card-footer">
+							<small class="text-body-secondary">Last updated 3 mins ago</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100">
+						<img src="img/p2.jpeg" class="card-img-top" style="height: 200px; object-fit: contain;" alt="2">
+						<div class="card-body">
+							<h5 class="card-title">Soft Drift</h5>
+							<p class="card-text">Hari ini aku membiarkan diri mengalir, tanpa terburu-buru.</p>
+						</div>
+						<div class="card-footer">
+							<small class="text-body-secondary">Last updated 3 mins ago</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100">
+						<img src="img/p3.jpeg" class="card-img-top" style="height: 200px; object-fit: contain;" alt="3">
+						<div class="card-body">
+							<h5 class="card-title">Deep Blue Thoughts</h5>
+							<p class="card-text">Ada hal-hal yang hanya bisa dipahami dalam sunyi yang dalam.</p>
+						</div>
+						<div class="card-footer">
+							<small class="text-body-secondary">Last updated 3 mins ago</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100">
+						<img src="img/p4.jpeg" class="card-img-top" style="height: 200px; object-fit: contain;" alt="4" />
+						<div class="card-body">
+							<h5 class="card-title">Wind in My Sails</h5>
+							<p class="card-text">Langkah kecil pun tetap membawaku menuju tempat yang baru.</p>
+						</div>
+						<div class="card-footer">
+							<small class="text-body-secondary">Last updated 3 mins ago</small>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100">
+						<img src="img/p5.jpeg" class="card-img-top" style="height: 200px; object-fit: contain;" alt="5" />
+						<div class="card-body">
+							<h5 class="card-title">Quiet Horizon</h5>
+							<p class="card-text">Tenang itu sederhana: langit, laut, dan satu napas panjang.</p>
+						</div>
+						<div class="card-footer">
+							<small class="text-body-secondary">Last updated 3 mins ago</small>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- article end -->
+
+	<!-- gallery begin -->
+	<section id="gallery" class="text-center p-5">
+		<div class="container">
+			<h1 class="fw-bold display-4 pb-3">Gallery</h1>
+			<div id="carouselExample" class="carousel slide">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="img/download (1).jpeg" class="d-block gallery-img mx-auto" alt="1">
+					</div>
+					<div class="carousel-item">
+						<img src="img/download (2).jpeg" class="d-block gallery-img mx-auto" alt="2">
+					</div>
+					<div class="carousel-item">
+						<img src="img/download (3).jpeg" class="d-block gallery-img mx-auto" alt="3">
+					</div>
+					<div class="carousel-item">
+						<img src="img/download (4).jpeg" class="d-block gallery-img mx-auto" alt="4">
+					</div>
+					<div class="carousel-item">
+						<img src="img/download (5).jpeg" class="d-block gallery-img mx-auto" alt="5">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+	</section>
+	<!-- gallery end -->
+
+	<!-- schedule begin -->
+	<section id="schedule" class="text-center p-5">
+		<div class="container">
+			<h1 class="fw-bold display-4 pb-3">Jadwal Kuliah & Kegiatan Mahasiswa</h1>
+			<div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+
+				<div class="col">
+					<div class="card h-100 mb-3" style="border-color: #f8d7da;">
+						<div class="card-header fw-bold" style="background-color: #f8d7da; color: #721c24;">Senin</div>
+						<div class="card-body">
+							<h6 class="card-subtitle mb-2 text-body-secondary fw-bold">09:30 - 12:00</h6>
+							<p class="card-text mb-1">Logika Informatika</p>
+							<p class="card-text text-muted small">Ruang H.3.1</p>
+							<hr />
+							<h6 class="card-subtitle mb-2 text-body-secondary fw-bold">14:20 - 15:50</h6>
+							<p class="card-text mb-1">Basis Data</p>
+							<p class="card-text text-muted small">Ruang D.2.M</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 mb-3" style="border-color: #fce8e6;">
+						<div class="card-header fw-bold" style="background-color: #fce8e6; color: #8a3b32;">Selasa</div>
+						<div class="card-body">
+							<h6 class="card-subtitle mb-2 text-body-secondary fw-bold">07:00 - 09:30</h6>
+							<p class="card-text mb-1">Sistem Operasi</p>
+							<p class="card-text text-muted small">Ruang H.3.1</p>
+							<hr />
+							<h6 class="card-subtitle mb-2 text-body-secondary fw-bold">14:10 - 15:50</h6>
+							<p class="card-text mb-1">RPL</p>
+							<p class="card-text text-muted small">Ruang H.3.8</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 mb-3" style="border-color: #f7d6e0;">
+						<div class="card-header fw-bold" style="background-color: #f7d6e0; color: #78284f;">Rabu</div>
+						<div class="card-body">
+							<h6 class="card-subtitle mb-2 text-body-secondary fw-bold">09:30 - 12:00</h6>
+							<p class="card-text mb-1">Kriptografi</p>
+							<p class="card-text text-muted small">Ruang H.7.1</p>
+							<hr />
+							<h6 class="card-subtitle mb-2 text-body-secondary fw-bold">13:30 - 14:10</h6>
+							<p class="card-text mb-1">Pemrograman Berbasis Web</p>
+							<p class="card-text text-muted small">Ruang H.7.1</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 mb-3" style="border-color: #fad2e1;">
+						<div class="card-header fw-bold" style="background-color: #fad2e1; color: #5c3a42;">Kamis</div>
+						<div class="card-body">
+							<p class="card-text mb-1">Tidak Ada Jadwal</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 mb-3" style="border-color: #fbc3bc;">
+						<div class="card-header fw-bold" style="background-color: #fbc3bc; color: #6e2c23;">Jumat</div>
+						<div class="card-body">
+							<h6 class="card-subtitle mb-2 text-body-secondary fw-bold">09:30 - 12:00</h6>
+							<p class="card-text mb-1">Probabilitas dan Statistik</p>
+							<p class="card-text text-muted small">Ruang H.3.2</p>
+							<hr />
+							<h6 class="card-subtitle mb-2 text-body-secondary fw-bold">13:30 - 15:00</h6>
+							<p class="card-text mb-1">Data Mining</p>
+							<p class="card-text text-muted small">Ruang H.5.8</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 mb-3" style="border-color: #f9e2ec;">
+						<div class="card-header fw-bold" style="background-color: #f9e2ec; color: #664154;">Sabtu</div>
+						<div class="card-body">
+							<p class="card-text mb-1">Tidak Ada Jadwal</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card h-100 mb-3" style="border-color: #edd1d8;">
+						<div class="card-header fw-bold" style="background-color: #edd1d8; color: #523038;">Minggu</div>
+						<div class="card-body">
+							<p class="card-text my-4 text-muted">Tidak Ada Jadwal</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- schedule end -->
+
+	<!-- profile begin -->
+	<section id="profile" class="p-5">
+		<div class="container">
+			<h1 class="fw-bold display-4 text-center pb-4">Profil Mahasiswa</h1>
+			<div class="row align-items-center justify-content-center">
+				<div class="col-12 col-md-4 text-center mb-4 mb-md-0">
+					<img
+						src="img/profil.jpeg"
+						class="rounded-circle img-fluid shadow"
+						style="width: 250px; height: 250px; object-fit: cover;"
+						alt="Foto Profil"
+					/>
+				</div>
+				<div class="col-12 col-md-6">
+					<div class="card border-0 shadow-sm p-3">
+						<div class="card-body">
+							<h3 class="fw-bold text-center text-md-start mb-3">Sirojul Millah</h3>
+							<p class="text-muted text-center text-md-start mb-4">Mahasiswa Teknik Informatika</p>
+							<div class="table-responsive">
+								<table class="table table-borderless mb-0">
+									<tbody>
+										<tr>
+											<th scope="row" style="width: 35%;">NIM</th>
+											<td>: A11.2025.16315</td>
+										</tr>
+										<tr>
+											<th scope="row">Program Studi</th>
+											<td>: Teknik Informatika</td>
+										</tr>
+										<tr>
+											<th scope="row">Email</th>
+											<td>: 111202516315@mhs.dinus.ac.id</td>
+										</tr>
+										<tr>
+											<th scope="row">Telepon</th>
+											<td>: +62 877 365 69345</td>
+										</tr>
+										<tr>
+											<th scope="row">Alamat</th>
+											<td>: Jepara, Jawa Tengah</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- profile end -->
+
+	<!-- footer begin -->
+	<footer class="text-center p-5">
+		<div>
+			<a href="https://www.instagram.com/srjlmlh?mdxt=azhqYWFwYnNjaDV5&utm_source=ig_contact_invite" target="_blank"><i class="bi bi-instagram h2 p-2 text-dark"></i></a>
+			<a href="https://x.com/LNGSHOT4sho" target="_blank"><i class="bi bi-twitter h2 p-2 text-dark"></i></a>
+			<a href="https://web.whatsapp.com/" target="_blank"><i class="bi bi-whatsapp h2 p-2 text-dark"></i></a>
+		</div>
+		<div>
+			Sirojul Millah A11.2025.16315
+		</div>
+	</footer>
+	<!-- footer end -->
+
+	<!-- Tombol Back to Top -->
+    <button
+      id="backToTop"
+      class="btn btn-danger rounded-circle position-fixed bottom-0 end-0 m-3 d-none"
+    >
+      <i class="bi bi-arrow-up" title="Back to Top"></i>
+    </button>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+		crossorigin="anonymous"
+	></script>
+	<script type="text/javascript">
+	function tampilWaktu(){
+		const waktu = new Date();
+		
+		const tanggal = waktu.getDate();
+		const bulan = waktu.getMonth();
+		const tahun = waktu.getFullYear();
+		const jam = waktu.getHours();
+		const menit = waktu.getMinutes();
+		const detik = waktu.getSeconds();
+
+		const arrBulan = ["1", "2", "3", "4","5","6","7","8","9","10","11","12"];
+
+		const tanggal_full = tanggal + "/" + arrBulan[bulan] + "/" + tahun;
+		const jam_full = jam + ":" + menit + ":" + detik;
+
+		document.getElementById("tanggal").innerHTML = tanggal_full;
+		document.getElementById("jam").innerHTML = jam_full;
+	}
+		setInterval(tampilWaktu, 1000);
+	</script>
+
+	<script type="text/javascript"> 
+	const backToTop = document.getElementById("backToTop");
+	
+	window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+          backToTop.classList.remove("d-none");
+          backToTop.classList.add("d-block");
+        } else {
+          backToTop.classList.remove("d-block");
+          backToTop.classList.add("d-none");
+        }
+      });
+
+	backToTop.addEventListener("click", function () {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	});
+	</script>
+	<script type="text/javascript">
+		const btnDark = document.getElementById("btnDark");
+		const btnLight = document.getElementById("btnLight");
+
+		btnDark.addEventListener("click", function () {
+			document.body.classList.add("dark");
+			document.documentElement.setAttribute("data-bs-theme", "dark");
+		});
+
+		btnLight.addEventListener("click", function () {
+			document.body.classList.remove("dark");
+			document.documentElement.setAttribute("data-bs-theme", "light");
+		});
+	</script>
+   </body>
+</html>
